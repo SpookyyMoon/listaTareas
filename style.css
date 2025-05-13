@@ -107,6 +107,7 @@ body {
 .descripcionTarea textarea {
     width: 100%;
     min-height: 8em;
+    max-width: 30em;
     border: 0.0625em solid #eee;
     border-radius: 0.5em;
     padding: 0.5em;
@@ -116,7 +117,6 @@ body {
 }
 
 .tituloTarea input, .descripcionTarea textarea {
-    text-decoration: line-through;
     color: #777;
 }
 

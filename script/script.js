@@ -21,6 +21,7 @@ $(document).ready(function () {
                     <button class="marcarPendiente">
                         <img src="./public/icons/eliminar.svg">
                     </button>
+                    <p class="fecha">${fechaTarea()}</p>
                 </div>
             </div>
         `);
@@ -28,9 +29,18 @@ $(document).ready(function () {
         return nuevaTarea;
     }
 
+    function fechaTarea(){
+        const date = new Date();
+        const fecha = `${date.getUTCDate()}/${date.getUTCMonth()+1}/${date.getUTCFullYear()} - ${date.getHours()}:${date.getMinutes()}`;
+        return fecha;
+    }
+
     $("#btnAddTarea").click(function (){
         const tareaNueva = crearTarea();
         $("#contenedorTareas").prepend(tareaNueva);
-        console.log("Tarea creada con ID:", tareaNueva.attr('id'));
+    });
+
+    $("#contenedorTareas").on("click", "button.marcarPendiente", function (){
+        $(this).closest(".tarea").remove();
     });
 });

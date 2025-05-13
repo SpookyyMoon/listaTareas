@@ -16,7 +16,7 @@ $(document).ready(function () {
                 </div>
                 <div class="botonesTarea">
                     <button class="marcarCompletada">
-                        <img src="./public/icons/completada.svg">
+                        <img class="imagen" src="./public/icons/completada.svg">
                     </button>
                     <button class="marcarPendiente">
                         <img src="./public/icons/eliminar.svg">
@@ -42,5 +42,18 @@ $(document).ready(function () {
 
     $("#contenedorTareas").on("click", "button.marcarPendiente", function (){
         $(this).closest(".tarea").remove();
+    });
+
+    $('#contenedorTareas').on("click", "button.marcarCompletada", function (){
+        const tarea = $(this).closest(".tarea");
+        $(this).closest(".tarea").toggleClass("completada");
+        $(this).closest(".descripcionTarea").toggleClass("completada");
+        $(this).closest(".tituloTarea").toggleClass("completada");
+        if(tarea.hasClass("completada")){
+            $(this.children, ".imagen").attr("src", "./public/icons/desmarcar.svg");
+        }
+        else{
+            $(this.children, ".imagen").attr("src", "./public/icons/completada.svg");
+        }
     });
 });

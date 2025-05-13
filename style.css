@@ -135,3 +135,11 @@ body {
 .botonesTarea button:hover {
     transform: translateY(-0.25em);
 }
+
+.completada{
+    opacity: 0.4;
+}
+
+.completada input, .completada textarea{
+    text-decoration-line: line-through;
+}

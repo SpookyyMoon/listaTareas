@@ -125,6 +125,13 @@ body {
     box-shadow: 0 0.5em 1.25em rgba(0, 0, 0, 0.15);
 }
 
-.botonesTarea button:hover {
+.botonesTarea button {
     background: #f0f0f0;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.botonesTarea button:hover {
+    transform: translateY(-0.25em);
+    box-shadow: 0 0.5em 1.25em rgba(0, 0, 0, 0.15);
 }

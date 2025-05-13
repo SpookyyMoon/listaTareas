@@ -1,0 +1,130 @@
+html {
+    height: 100%;
+    font-size: 16px;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f7;
+    font-family: 'Poppins', sans-serif;
+}
+
+#contenedor {
+    width: 90%;
+    height: 80%;
+    border-radius: 1em;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    background: linear-gradient(135deg, #fe6f83 0%, #ff8a9b 100%);
+    padding: 1.5em;
+    text-align: center;
+}
+
+#header p {
+    font-size: 2.5em;
+    margin: 0;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.2);
+}
+
+#contenedorTareas {
+    padding: 1.5em;
+    background: #f9f9ff;
+    flex-grow: 1;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 32.5%);
+    gap: 1em;
+    align-content: flex-start;
+}
+
+.tarea {
+    background: white;
+    border-radius: 0.75em;
+    padding: 1.25em;
+    box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-left: 0.375em solid transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: fit-content;
+}
+
+#btnAddTarea {
+    background: white;
+    border: 0.125em dashed #ddd;
+    border-radius: 0.75em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    grid-column: span 1;
+    height: 100%;
+    min-height: 15em;
+}
+
+#btnAddTarea:hover {
+    border-color: #fe6f83;
+    background: #fff5f6;
+}
+
+#btnAddTarea p {
+    color: #666;
+    font-size: 1em;
+    margin: 0;
+}
+
+#btnAddTarea img {
+    width: 2em;
+    opacity: 0.7;
+}
+
+.tituloTarea input {
+    font-size: 1.15em;
+    font-weight: 500;
+    width: 100%;
+    border: none;
+    border-bottom: 0.0625em solid #eee;
+    padding: 0.5em 0;
+    background: transparent;
+}
+
+.descripcionTarea textarea {
+    width: 100%;
+    min-height: 8em;
+    border: 0.0625em solid #eee;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    resize: vertical;
+    font-family: 'Poppins', sans-serif;
+    flex-grow: 1;
+}
+
+.tituloTarea input, .descripcionTarea textarea {
+    text-decoration: line-through;
+    color: #777;
+}
+
+.tarea:hover {
+    transform: translateY(-0.25em);
+    box-shadow: 0 0.5em 1.25em rgba(0, 0, 0, 0.15);
+}
+
+.botonesTarea button:hover {
+    background: #f0f0f0;
+}
